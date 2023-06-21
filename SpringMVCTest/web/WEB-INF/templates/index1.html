@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>html首页</title>
+</head>
+<body>
+首页
+<!--使用th命名空间，href自动识别为路径添加绝对路径-->
+<a th:href="@{/target}">访问目标页面target.html</a><br>
+
+<a th:href="@{/test/1}">rest</a>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+<!--引入命名空间util-->
+<!--    提取list集合类型属性注入-->
+    <util:list id="name">
+        <value>张三</value>
+        <value>小三</value>
+    </util:list>
+    <util:map id="map">
+        <entry key="JAVA" value="java"></entry>
+    </util:map>
+    <bean id="stu" class="com.spring.collectiontype.Stu">
+        <!--        数组类型属性注入-->
+        <property name="course">
+            <array>
+                <value>数学二</value>
+                <value>英语二</value>
+                <value>政治</value>
+            </array>
+        </property>
+
+        <!--        list注入-->
+        <property name="list" ref="name"></property>
+
+        <!--        map注入-->
+        <property name="map">
+            <map>
+                <entry key="JAVA" value="java"></entry>
+                <entry key="JAVAWEB" value="javaweb"></entry>
+            </map>
+        </property>
+
+        <!--        set注入-->
+        <property name="set">
+            <set>
+                <value>MySql</value>
+                <value>MonGoDB</value>
+            </set>
+        </property>
+        <!--        注入-->
+        <property name="lc">
+            <list>
+                <ref bean="course1"></ref>
+                <ref bean="course2"></ref>
+                <ref bean="course3"></ref>
+            </list>
+        </property>
+    </bean>
+
+    <bean name="course1" class="com.spring.collectiontype.Course">
+        <property name="name" value="JAVA"></property>
+    </bean>
+    <bean name="course2" class="com.spring.collectiontype.Course">
+        <property name="name" value="python"></property>
+    </bean>
+    <bean name="course3" class="com.spring.collectiontype.Course">
+        <property name="name" value="vue"></property>
+    </bean>
+</beans>

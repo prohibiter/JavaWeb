@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p th:text="${index}">非session</p>
+<p th:text="${session.index}">session</p>
+<p th:test="${application.index}"></p>
+<form th:action="@{/scope/getByServletAPI}">
+    <input type="submit" value="getIndex">
+</form>
+</body>
+</html>

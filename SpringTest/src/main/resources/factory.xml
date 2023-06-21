@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    scope 属性值
+        设置bean是单实例还是多实例对象
+        1、默认为单实例，singleton，加载配置文件时就会创建实例对象
+        2、prototype ，表示多实例，不是在加载时创建对象，在调用getBean方法时创建多实例对象
+        单实例表示多次实例化一个对象，全对象都为一个地址
+        多实例表示每次实例都是一个新对象，地址都不相同
+
+        其他参数：request、session
+-->
+    <bean name="factory" class="com.spring.bean.FactoryBeanTest" scope="prototype"></bean>
+
+</beans>
